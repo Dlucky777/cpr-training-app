@@ -18,22 +18,6 @@ const BluetoothConnection: React.FC<BluetoothConnectionProps> = ({
   error,
   isAvailable
 }) => {
-  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-
-  if (isSafari || isIOS) {
-    return (
-      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
-        <div className="flex items-center">
-          <BluetoothOff className="h-6 w-6 text-yellow-500 mr-3" />
-          <p className="text-yellow-700">
-            Bluetooth functionality is not available in Safari. Please use Chrome or Firefox on iOS devices.
-          </p>
-        </div>
-      </div>
-    );
-  }
-
   if (!isAvailable) {
     return (
       <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
