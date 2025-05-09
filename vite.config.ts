@@ -23,5 +23,11 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html')
       }
     }
+  },
+  server: {
+    host: true, // Listen on all local IPs
+    port: 3000,
+    strictPort: true,
+    cors: true
   }
 }) 
